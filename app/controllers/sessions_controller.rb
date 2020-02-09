@@ -10,8 +10,8 @@ class SessionsController < ApplicationController
     if !params[:name] || params[:name].empty?
       redirect_to '/sessions/new'
     else
-      # if the user is already logged in, set the session[:name} equal to the params[:name]
-      # then redirect to the root page, which is defined as 'application#welcome'
+      # if the user has provided a name, set the session[:name] equal to the params[:name]
+      # then redirect to the root page, which is defined as 'application#welcome', where the user is greeted 
       session[:name] = params[:name]
       redirect_to '/'
     end
